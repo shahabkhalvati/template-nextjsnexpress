@@ -13,12 +13,9 @@ services:
     command: yarn run dev
     expose:
       - 3000
-    # ports:
-    #   - '3000:3000'
     volumes:
       - ./client/nextjs:/var/website
       - ./src-shared:/var/website/src-shared
-      # - ./locales:/var/website/static/locales
   api:
     image: node:11.11
     working_dir: /var/website
@@ -26,8 +23,7 @@ services:
     expose:
       - 3000
     # ports:
-    #   - '3001:3000'
+    #   - '3000:3000'
     volumes:
       - ./server:/var/website
       - ./src-shared:/var/website/src-shared
-      # - ./locales:/var/website/locales
